@@ -1,0 +1,11 @@
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^([A-Za-z0-9_]+)(\|/|)$  index.php?page=$1 [NC,QSA]
+RewriteRule ^admin/([A-Za-z0-9_]+)(\/|)$  index.php?page=admin&tab=$1 [NC,QSA]
+
+#RewriteCond %{HTTP_HOST} !^www\.gilim.net$
+#RewriteCond %{HTTP_HOST} ^(.*)\.gilim.net$
+#RewriteRule ^$ /index.php?pg=blog&user=%1 [L]
